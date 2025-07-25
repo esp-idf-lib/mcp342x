@@ -1,5 +1,9 @@
 # esp-idf-lib/mcp342x
 
+[![Build examples](https://github.com/esp-idf-lib/mcp342x/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/mcp342x/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/mcp342x/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/mcp342x/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/mcp342x/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/mcp342x/actions/workflows//validate-component.yml)
+
 Driver for 18-Bit, delta-sigma ADC MCP3426/MCP3427/MCP3428.
 
 * [Documentation](https://esp-idf-lib.github.io/mcp342x/)
@@ -11,7 +15,7 @@ Driver for 18-Bit, delta-sigma ADC MCP3426/MCP3427/MCP3428.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/mcp342x^1.0.0
+idf.py add-dependency esp-idf-lib/mcp342x
 ```
 
 ## Support
