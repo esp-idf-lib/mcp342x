@@ -11,7 +11,7 @@ Driver for 18-Bit, delta-sigma ADC MCP3426/MCP3427/MCP3428.
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/mcp342x^1.0.0
+idf.py add-dependency esp-idf-lib/mcp342x^1.0.0
 ```
 
 ## Support
