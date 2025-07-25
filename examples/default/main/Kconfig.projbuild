@@ -8,5 +8,5 @@ menu "Example configuration"
             See "5.3.2 DEVICE ADDRESS BITS (A2, A1, A0) AND ADDRESS SELECTION PINS
             (MCP3423 AND MCP3424 )" in the datasheet.
 
-    rsource "../../../../devtools/Kconfig.i2c"
+    rsource "../../../Kconfig.i2c"
 endmenu
