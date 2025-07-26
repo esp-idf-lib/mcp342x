@@ -1,5 +1,5 @@
 ---
-version: 1.0.4
+version: 1.0.5
 description: Driver for 18-Bit, delta-sigma ADC MCP3426/MCP3427/MCP3428
 license: BSD-3
 targets:
