@@ -64,21 +64,24 @@ static const char *TAG = "mcp342x";
 #define CHECK(x) do { esp_err_t __; if ((__ = x) != ESP_OK) return __; } while (0)
 #define CHECK_ARG(VAL) do { if (!(VAL)) return ESP_ERR_INVALID_ARG; } while (0)
 
-static const uint32_t sample_time[] = {
+static const uint32_t sample_time[] =
+{
     [MCP342X_RES_12] = 4167,
     [MCP342X_RES_14] = 16667,
     [MCP342X_RES_16] = 66667,
     [MCP342X_RES_18] = 266667
 };
 
-static const float lsb[] = {
+static const float lsb[] =
+{
     [MCP342X_RES_12] = 0.001,
     [MCP342X_RES_14] = 0.00025,
     [MCP342X_RES_16] = 0.0000625,
     [MCP342X_RES_18] = 0.000015625
 };
 
-static const int gain_val[] = {
+static const int gain_val[] =
+{
     [MCP342X_GAIN1] = 1,
     [MCP342X_GAIN2] = 2,
     [MCP342X_GAIN4] = 4,
@@ -88,17 +91,17 @@ static const int gain_val[] = {
 static void get_cfg(mcp342x_t *dev, uint8_t reg)
 {
     dev->mode = (reg & BIT_MODE) ? MCP342X_CONTINUOUS : MCP342X_ONESHOT;
-    dev->channel =    (reg >> POS_CHAN) & MASK_VAL;
+    dev->channel = (reg >> POS_CHAN) & MASK_VAL;
     dev->resolution = (reg >> POS_SR)   & MASK_VAL;
-    dev->gain =       (reg >> POS_GAIN) & MASK_VAL;
+    dev->gain = (reg >> POS_GAIN) & MASK_VAL;
 }
 
 static inline uint8_t get_reg(mcp342x_t *dev)
 {
     return (dev->mode == MCP342X_CONTINUOUS ? BIT_MODE : 0)
-        | ((dev->channel & MASK_VAL) << POS_CHAN)
-        | ((dev->resolution & MASK_VAL) << POS_SR)
-        | ((dev->gain & MASK_VAL) << POS_GAIN);
+           | ((dev->channel & MASK_VAL) << POS_CHAN)
+           | ((dev->resolution & MASK_VAL) << POS_SR)
+           | ((dev->gain & MASK_VAL) << POS_GAIN);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

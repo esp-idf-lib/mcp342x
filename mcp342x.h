@@ -54,7 +54,8 @@ extern "C" {
 /**
  * Device operation mode
  */
-typedef enum {
+typedef enum
+{
     MCP342X_ONESHOT = 0, //!< One-shot conversion mode
     MCP342X_CONTINUOUS   //!< Continuous conversions mode, default
 } mcp342x_mode_t;
@@ -62,7 +63,8 @@ typedef enum {
 /**
  * Input channel
  */
-typedef enum {
+typedef enum
+{
     MCP342X_CHANNEL1 = 0, //!< Channel 1, default
     MCP342X_CHANNEL2,     //!< Channel 2
     MCP342X_CHANNEL3,     //!< Channel 3 (MCP3428 only, treated as channel 1 by the MCP3426/MCP3427)
@@ -72,7 +74,8 @@ typedef enum {
 /**
  * Resolution
  */
-typedef enum {
+typedef enum
+{
     MCP342X_RES_12 = 0, //!< 12 bits, 240 samples per second
     MCP342X_RES_14,     //!< 14 bits, 60 samples per second
     MCP342X_RES_16,     //!< 16 bits, 15 samples per second
@@ -82,7 +85,8 @@ typedef enum {
 /**
  * PGA gain
  */
-typedef enum {
+typedef enum
+{
     MCP342X_GAIN1 = 0,//!< x1, default
     MCP342X_GAIN2,    //!< x2
     MCP342X_GAIN4,    //!< x4
@@ -92,7 +96,8 @@ typedef enum {
 /**
  * Device descriptor
  */
-typedef struct {
+typedef struct
+{
     i2c_dev_t i2c_dev;               //!< I2C device descriptor
     mcp342x_mode_t mode;             //!< Operational mode
     mcp342x_channel_t channel;       //!< Input channel
