@@ -232,7 +232,7 @@ esp_err_t mcp342x_oneshot_conversion(mcp342x_t *dev, int32_t *data)
     uint32_t st;
     CHECK(mcp342x_get_sample_time_us(dev, &st));
     CHECK(mcp342x_start_conversion(dev));
-    vTaskDelay(pdMS_TO_TICKS(st / 1000 + 1));
+    vTaskDelay(pdMS_TO_TICKS(st / 1000 + 1) + 1); // See https://github.com/esp-idf-lib/mcp342x/issues/1
     bool ready;
     CHECK(mcp342x_get_data(dev, data, &ready));
     if (!ready)
